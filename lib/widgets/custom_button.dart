@@ -6,10 +6,14 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final Color color;
+  final Color textColor;
   const CustomButton({
     Key? key,
     required this.text,
     required this.onTap,
+    required this.color,
+    required this.textColor,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -20,16 +24,12 @@ class CustomButton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: 60,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: const Color(0xff7D23E0)),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: color),
           width: double.infinity,
           child: Center(
             child: Text(
               text,
-              style: GoogleFonts.plusJakartaSans(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w800
-              ),
+              style: GoogleFonts.plusJakartaSans(color: textColor, fontSize: 16, fontWeight: FontWeight.w700),
             ),
           ),
         ),

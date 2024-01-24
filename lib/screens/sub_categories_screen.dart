@@ -26,9 +26,14 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    color: CustomColors.greyColor,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: CustomColors.greyColor,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -36,8 +41,8 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                 ),
                 Text(
                   'Choose Amenities',
-                  style:
-                      GoogleFonts.plusJakartaSans(color: Color(0xff212121), fontSize: 24, fontWeight: FontWeight.w700),
+                  style: GoogleFonts.plusJakartaSans(
+                      color: const Color(0xff212121), fontSize: 24, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(
                   height: 15,
@@ -84,7 +89,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
@@ -119,7 +124,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
@@ -154,7 +159,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
@@ -183,16 +188,22 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                         provider.checkAmenities(11);
                       },
                       child: CustomContainer(
-                          content: provider.list[11].title,
-                          imagePath: provider.list[11].imagePath,
-                          isCheccked: provider.list[11].isChecked),
+                        content: provider.list[11].title,
+                        imagePath: provider.list[11].imagePath,
+                        isCheccked: provider.list[11].isChecked,
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-                CustomButton(text: "Done", onTap: () {}),
+                CustomButton(
+                  text: "Done",
+                  onTap: () {},
+                  color: const Color(0xff7D23E0),
+                  textColor: Colors.white,
+                ),
               ],
             ),
           ),

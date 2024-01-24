@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ostello_test/provider/amenities_provider.dart';
 import 'package:ostello_test/routes/routes_generator.dart';
+import 'package:ostello_test/screens/home.dart';
 import 'package:ostello_test/screens/instiute_topper_screen.dart';
-import 'package:ostello_test/screens/sub_categories_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: ((settings) => RouteGenerator.onGeneratedRoutes(settings)),
-      home: SubCategoriesScreen(),
+      home: Home(),
     );
   }
 }
